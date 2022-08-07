@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  
+
+  <title>Ferretería CE y DE</title>
+  <!--bootstrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+  <!-- Custom fonts for this template-->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+  <!--Style CSS-->
+  <link href="css/style.css" rel="stylesheet">
+
+  <!--Imprimir-->
+  <script language="Javascript">
+    function imprSelec(imprimir) {
+      var ficha = document.getElementById(imprimir);
+      var ventimp = window.open(' ', 'popimpr');
+      ventimp.document.write( ficha.innerHTML );
+      ventimp.document.close();
+      ventimp.print( );
+      ventimp.close();
+      vaciarPresupuesto();
+    }
+    </script>
+
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar"
+      style="background: linear-gradient( #B83232, black)">
+
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="indexCliente.html">
+        <div class="sidebar-brand-icon rotate-n-15">
+          <i></i>
+        </div>
+        <div class="sidebar-brand-text mx-3"><img src="img/logo chiquito2.jpg" width="75%" height="75%" alt="#"></div>
+      </a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item ">
+        <a class="nav-link" href="indexCliente.html">
+          <i class="fas fa-fw fa-home"></i>
+          <span>Inicio</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      
+        <li class="nav-item active">
+          <a class="nav-link" href="buscadorP.html">
+            <i class="fas fa-fw fa-shopping-basket"></i>
+            <span>Armá tu presupuesto</span>
+          </a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="indexCliente.html#nosotros">
+          <i class="fas fa-fw fa-address-card"></i>
+          <span>¿Quiénes somos?</span>
+        </a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
+          aria-controls="collapseTwo">
+          <i class="fas fa-fw fa-phone-square"></i>
+          <span>¡Contactanos!</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item"
+              href="https://api.whatsapp.com/send/?phone=%2B542664271942&text=Hola +Ferretería +CE +y +DE+...">Whatsapp</a>
+            <a class="collapse-item" href="contacto.html">Correo</a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+          <!-- Sidebar Toggle (Topbar) -->
+          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
+
+          <!-- Topbar Search -->
+          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+            <div class="input-group" >
+              <input type="text" class="form-control bg-light border-0 small" placeholder="Buscar productos..."
+                aria-label="Search" aria-describedby="basic-addon2" list="list-timezone" id="busqueda">
+              <div class="input-group-append" >
+                <button class="btn" type="button" onclick="" style="background-color: #B83232;"id="search-button">
+                  <i class="fas fa-search fa-sm" style="color: white"></i>
+                </button>
+                <datalist id="list-timezone">
+                  
+              </datalist>
+              </div>
+            </div>
+            <script>
+              document.addEventListener('DOMContentLoaded', e => {
+                  $('busqueda').autocomplete()
+              }, false);
+              
+          </script>
+          </form>
+          <!-- Topbar Navbar -->
+          <ul class="navbar-nav ml-auto">
+
+            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+            <li class="nav-item dropdown no-arrow d-sm-none">
+              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-search fa-fw" style="color: black"></i>
+              </a>
+              <!-- Dropdown - Messages -->
+              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                aria-labelledby="searchDropdown">
+                <form class="form-inline mr-auto w-100 navbar-search">
+                  <div class="input-group">
+                    <input type="text" class="form-control bg-light border-0 small" placeholder="Buscar productos..."
+                      aria-label="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                      <button class="btn btn-danger" type="button">
+                        <i class="fas fa-search fa-sm"></i>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </li>
+
+          </ul>
+
+        </nav>
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Armá tu presupuesto</h1>
+            <a href="#presupuesto" class="d-none d-sm-inline-block btn btn-sm shadow-sm" 
+              style="background-color: #B83232; color: white;" id="botonPresupuesto"><i class="fas fa-list-alt fa-sm text-white-50"></i>
+              Ver Presupuesto</a>
+          </div>
+
+
+          <!-- Content Row -->
+
+          <div class="row">
+            <p>Armá tu presupuesto online, descargalo y llevalo con vos a la ferretería, ¡obtené un 5% de descuento en
+              tu compra!</p>
+            <!-- Area Chart -->
+            <div class="col-xl-10 col-lg-7 d-block mx-auto">
+              
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold" style="color: #B83232;">Productos</h6>
+
+                </div>
+                <!-- Card Body -->
+
+                
+                <div class="card-body" >
+                  <!--Trajeta de grupo-->
+                  
+                  <div id="productos" ></div>
+                  
+                  
+                  <div class="row row-cols-1 row-cols-md-3 g-4">
+                    
+                    <div class="col">
+                      <div class="card h-100">
+                        <img src="img/taladro1.jpg" class="card-img-top img-thumbnail" alt="taladro1">
+                        
+                        <div class="card-body">
+                          <h5 class="card-title" id="titulo">Taladro inalámbrico de 13mm Dowen Pagio TB1318P 18V + accesorios
+                            con maletín de transporte 220V 50Hz</h5>
+                            <p id="codigo">0P4D</p>
+                          <p class="card-text">
+                            <b>Precio: $</b> <a style="color: #347637;" id="precio">17689.59</a>
+                          </p>
+                        </div>
+                        <div class="card-footer" style="background-color: white;">
+                          <small class="text-muted"><button class="btn btn-sm d-block mx-auto" onclick="addPresupuesto(1)"
+                              style="background-color: #B83232; color: white;" >Añadir al
+                              presupuesto</button></small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card h-100">
+                        <img src="img/taladro2.jpg" class="card-img-top img-thumbnail" alt="taladro2">
+                        <div class="card-body">
+                          <h5 class="card-title" id="titulo2">Taladro percutor eléctrico de 13mm Philco TP711 710W + accesorios
+                            220V</h5>
+                            <p id="codigo2">6LM7</p>
+                          <p class="card-text">
+                            <b>Precio: $</b><a style="color: #347637;"id="precio2">4999</a>
+                          </p>
+                        </div>
+                        <div class="card-footer" style="background-color: white;">
+                          <small class="text-muted"><button class="btn btn-sm d-block mx-auto" onclick="addPresupuesto(2)"
+                              style="background-color: #B83232; color: white;">Añadir al
+                              presupuesto</button></small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card h-100">
+                        <img src="img/taladro3.jpg" class="card-img-top img-thumbnail" alt="taladro3">
+                        <div class="card-body">
+                          <h5 class="card-title" id="titulo3">Taladro inalámbrico de 10mm Black+Decker CD121K 12V + accesorios
+                            con maletín de transporte</h5>
+                            <p id="codigo3">6LM7</p>
+                          <p class="card-text">
+                            <b>Precio: $</b><a style="color: #347637;" id="precio3">9852</a>
+
+                          </p>
+                        </div>
+                        <div class="card-footer" style="background-color: white;">
+                          <small class="text-muted"><button class="btn btn-sm d-block mx-auto" onclick="addPresupuesto(3)"
+                              style="background-color: #B83232; color: white;">Añadir al
+                              presupuesto</button></small>
+                        </div>
+                      </div>
+                    </div>        
+                    
+                  </div><!--fin de grupo de tarjeta1-->
+                  <br>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="row" id="presupuesto">
+            <!-- Area Chart -->
+            <div class="col-xl-10 col-lg-7 d-block mx-auto">
+            
+                <div class="card shadow mb-4" id="imprimir">
+                    <!-- Card Header - Dropdown -->
+                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <br/>
+                        <br/>
+                        <div class="d-sm-flex align-items-center justify-content-left" >
+                          <h1 class="h3 mb-0 text-black-400">Descripción del Presupuesto</h1>
+                        </div>
+                        <br>
+                    </div>
+                    <div id="mostrar" class="container">
+                          
+                    </div>
+                    <br/>
+                    <div class="container" id="precio1">
+                      <!--
+                      <p><b>  Total:</b> <a style="color: #347637;">$17.200</a></p>
+                        <p>  *Precio válido por una semana.</p>
+                        -->
+                    </div>
+                    
+                    <a href="javascript:imprSelec('imprimir')" class="d-none d-sm-inline-block btn btn-sm shadow-sm" 
+                    style="background-color: #B83232; color: white;"><i class="fas fa-download fa-sm text-white-50"></i>
+                    Descargar Presupuesto</a>
+                </div>
+                    <!-- Card Body -->
+
+                </div>
+        </div>
+        
+
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Made with ♥ UNSL</span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+}
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="vendor/chart.js/Chart.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="js/demo/chart-area-demo.js"></script>
+  <script src="js/demo/chart-pie-demo.js"></script>
+  <!--Funcionamiento de carrusel-->
+  <!--poper sirve para hacer menus desplegable o ventana emergentes-->
+  <!--<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>-->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+    integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+    crossorigin="anonymous"></script>
+  <!--Efectos de carrusel-->
+  <script type="text/javascript">
+    $('.carousel').carousel({
+
+      pause: true
+    });
+  </script>
+
+<script>
+  let presupuesto = [];
+  suma = 0; 
+  const addPresupuesto = (dato) => {
+    let producto = [];
+    if(dato===1){ 
+      producto[0] = " Producto: "+document.getElementById("titulo").textContent;
+      producto[1] = "<br>"+" Precio: "+document.getElementById("precio").textContent;
+      producto[2] = "<br>"+" Codigo: "+document.getElementById("codigo").textContent+"<br>";
+      
+      suma+=parseFloat(document.getElementById("precio").textContent);
+    }
+    if(dato===2){
+      producto[0] = " Producto: "+document.getElementById("titulo2").textContent;
+      producto[1] = "<br>"+" Precio: "+document.getElementById("precio2").textContent;
+      producto[2] = "<br>"+" Codigo: "+document.getElementById("codigo2").textContent+"<br>";
+    
+      suma+=parseFloat(document.getElementById("precio2").textContent);
+    }
+    if(dato===3){
+      producto[0] = " Producto: "+document.getElementById("titulo3").textContent;
+      producto[1] = "<br>"+" Precio: "+document.getElementById("precio3").textContent;
+      producto[2] = "<br>"+" Codigo: "+document.getElementById("codigo3").textContent+"<br>";
+    
+      suma+=parseFloat(document.getElementById("precio3").textContent);
+    }
+
+    presupuesto.push(producto);
+    
+    alert("Producto agregado al presupuesto");
+    const itemTabla= document.getElementById("mostrar");
+    itemTabla.innerHTML = "";
+    const itemCreador= document.createElement("div");
+
+    const itemPrecio= document.getElementById("precio1");
+    
+    for(let i=0; i<presupuesto.length;i++){
+      itemCreador.innerHTML+=
+      `
+        <p>
+          ${presupuesto[i]}
+        </p>
+        <br/>
+      `
+      itemTabla.appendChild(itemCreador);
+    }
+
+    itemPrecio.innerHTML = "";
+    const itemCreadorPrecio= document.createElement("div");
+    itemPrecio.innerHTML +=
+    `
+    <p><b>  Total: $</b> <a style="color: #347637;">${suma}</a></p>
+                        <p>  *Precio válido por una semana.</p>
+    
+    `
+    itemPrecio.appendChild(itemCreadorPrecio);
+    
+  }
+
+</script>
+
+<script>
+  const vaciarPresupuesto = () =>{
+      presupuesto = [];
+  }
+</script>
+
+<script src="js/productoMenu.js"></script>
+</body>
+
+</html>
